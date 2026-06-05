@@ -38,7 +38,7 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/plataforma-cursos:latest
 
-      # Paso 5: Configurar credenciales de AWS
+      # Paso 5 : Configurar credenciales de AWS
       - name: Set up AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
