@@ -57,6 +57,6 @@ jobs:
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/plataforma-cursos:latest
             sudo docker stop plataforma-cursos || true
             sudo docker rm plataforma-cursos || true
-            sudo docker run -d --name plataforma-cursos -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/plataforma-cursos:latest
+            sudo docker run -d --name plataforma-cursos -v /mnt/efs:app/efs -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/plataforma-cursos:latest
             sudo docker ps
           EOF
